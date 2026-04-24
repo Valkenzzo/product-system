@@ -1,0 +1,54 @@
+
+
+<!-- KÖZÉPRE IGAZÍTÁS -->
+<div class="container">
+
+    <mat-card class="card">
+
+        <h2 class="title">Registration</h2>
+
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form" novalidate>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name">
+                <mat-error *ngIf="myForm.name.hasError('required')">Name is required.</mat-error>
+                <mat-error *ngIf="myForm.name.hasError('minlength')">Min. 3 characters.</mat-error>
+                <mat-error *ngIf="myForm.name.hasError('pattern')">Only letters and spaces.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username">
+                <mat-error *ngIf="myForm.username.hasError('required')">Username is required.</mat-error>
+                <mat-error *ngIf="myForm.username.hasError('minlength')">Min. 3 characters.</mat-error>
+                <mat-error *ngIf="myForm.username.hasError('pattern')">Only letters and numbers.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-error *ngIf="myForm.password.hasError('required')">Password is required.</mat-error>
+                <mat-error *ngIf="myForm.password.hasError('minlength')">Min. 6 characters.</mat-error>
+                <mat-error *ngIf="myForm.password.hasError('pattern')">Only letters and numbers.</mat-error>
+            </mat-form-field>
+
+            <div class="error" *ngIf="submitError">
+                {{ submitError }}
+            </div>
+
+            <button mat-raised-button class="submit" type="submit">
+                Sign Up
+            </button>
+
+            <!-- VISSZA LOGIN -->
+            <div class="bottom-link">
+                Already have an account?
+                <a routerLink="/login">Back to login</a>
+            </div>
+
+        </form>
+
+    </mat-card>
+
+</div>

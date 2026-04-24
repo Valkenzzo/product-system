@@ -1,0 +1,23 @@
+<mat-card class="menuCard">
+    <mat-card-content>
+        <button mat-raised-button routerLinkActive="active" routerLink="/products/create" class="menuBtn">Create
+            Product</button>
+        <button mat-raised-button routerLinkActive="active" routerLink="/dashboard" class="menuBtn">Dashboard</button>
+    </mat-card-content>
+</mat-card>
+
+<div class="list">
+    <div *ngIf="loadError">{{ loadError }}</div>
+
+    <mat-card class="cardList" *ngFor="let product of products; let i = index">
+        <mat-card-title class="title">{{ product.name }}</mat-card-title>
+        <mat-card-content>
+            <div class="content"><span class="type">Quantity: </span>{{ product.quantity }}</div>
+            <div class="content"><span class="type">Type of Quantity: </span>{{ product.typeOfQuantity }}</div>
+        </mat-card-content>
+        <button mat-raised-button class="editBtn" (click)="edit(i)">Edit</button>
+        <button mat-raised-button class="deleteBtn" (click)="delete(i)">Delete</button>
+    </mat-card>
+
+    <div *ngIf="!loadError && products.length === 0">No products found.</div>
+</div>

@@ -1,0 +1,118 @@
+/* háttér */
+body {
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* felső sáv */
+.menuCard {
+    width: 100%;
+    padding: 10px 20px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+/* menü gomb */
+.menuBtn {
+    padding: 8px 14px;
+    font-size: 14px;
+
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: #444;
+
+    transition: all 0.2s ease;
+}
+
+.menuBtn:hover {
+    background: #f5f5f5;
+}
+
+/* LISTA CONTAINER (ez volt a legnagyobb gond) */
+.list {
+    max-width: 1100px;
+    margin: 40px auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* KÁRTYA */
+.cardList {
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* cím */
+.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* label */
+.type {
+    font-weight: 600;
+    color: #555;
+}
+
+/* tartalom */
+.content {
+    font-size: 14px;
+    color: #333;
+}
+
+/* gombok konténer */
+.actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* alap gomb */
+button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* edit */
+.editBtn {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+    color: white;
+}
+
+/* delete */
+.deleteBtn {
+    background: linear-gradient(135deg, #ef5350, #c62828);
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

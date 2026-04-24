@@ -1,0 +1,77 @@
+.card {
+    width: 100%;
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Input mezők */
+mat-form-field {
+    width: 100%;
+}
+
+/* Gombok alap */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+
+    border-radius: 12px;
+    border: none;
+
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+    color: white;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Hover */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Submit külön kiemelve */
+.submit {
+    font-weight: 600;
+}
+
+/* Secondary gomb (pl. regisztráció) */
+.reg {
+    background: transparent;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.reg:hover {
+    background: #f5f5f5;
+}
+
+/* Címek */
+.title,
+.loginTitle {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Hibaszöveg */
+#wrongDatas {
+    color: #e53935;
+    font-size: 14px;
+    text-align: center;
+}
