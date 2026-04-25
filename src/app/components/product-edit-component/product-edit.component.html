@@ -27,15 +27,15 @@
                     <option value="kg">kg</option>
                     <option value="db">db</option>
                     <option value="liter">liter</option>
-                    <option value="g">g</option>
-                    <option value="dl">dl</option>
-                    <option value="cs">cs</option>
                 </select>
                 <mat-error *ngIf="myFrom['typeOfQuantity'].hasError('required')">Unit is required.</mat-error>
             </mat-form-field>
             <br>
             <div *ngIf="submitError">{{ submitError }}</div>
             <button mat-raised-button type="submit" class="submit">Submit</button>
+                     <button mat-raised-button class="submit" routerLink="/products">
+                        Cancel
+                    </button>
         </form>
     </mat-card-content>
 </mat-card>
