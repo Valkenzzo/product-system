@@ -59,19 +59,24 @@ export class ProductCreateComponent implements OnInit {
 
   mainForm() {
     this.createProductForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z0-9 ]+$')]],
-      quantity: ['', [Validators.required, Validators.min(0), Validators.pattern('^[0.0*-9.9*]+$')]],
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      quantity: ['', [Validators.required, Validators.min(0), Validators.pattern('^[0-9]+(\\.[0-9]+)?$')]],
       typeOfQuantity: ['', [Validators.required]],
     });
   }
 
   onSubmit(): void {
+
+  
     this.submitted = true;
     this.submitError = '';
     if (!this.createProductForm.valid) {
+       
       this.createProductForm.markAllAsTouched();
       return;
     }
+
+    
 
     this.productService.createProduct(this.createProductForm.getRawValue()).subscribe(
       () => {
